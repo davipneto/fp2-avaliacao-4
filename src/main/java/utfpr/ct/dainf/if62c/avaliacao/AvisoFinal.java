@@ -17,6 +17,9 @@ public class AvisoFinal extends Aviso {
     public void run(){
         System.out.println(compromisso.getDescricao() + 
                            "começa agora");
+        for(Aviso a: compromisso.getAvisos()){
+            a.cancel();
+        }
     }
     
 }

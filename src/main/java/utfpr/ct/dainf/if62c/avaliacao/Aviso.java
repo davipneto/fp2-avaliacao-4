@@ -1,5 +1,4 @@
 package utfpr.ct.dainf.if62c.avaliacao;
-
 import java.util.TimerTask;
 
 /**
@@ -13,6 +12,10 @@ public class Aviso extends TimerTask {
 
     public Aviso(Compromisso compromisso) {
        this.compromisso = compromisso;
+    }
+    
+    public Compromisso getCompromisso(){
+        return compromisso;
     }
     
     @Override

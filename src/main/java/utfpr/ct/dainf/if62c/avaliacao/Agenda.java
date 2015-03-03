@@ -54,14 +54,22 @@ public class Agenda {
     }
     
     public void cancela(Compromisso compromisso) {
-
+        for(Aviso a: compromisso.getAvisos()){
+            a.cancel();
+        }
+        compromissos.remove(compromisso);
     }
     
     public void cancela(Aviso aviso) {
-    
+        aviso.cancel();
+        aviso.getCompromisso().getAvisos().remove(aviso);
     }
     
     public void destroi() {
-    
+        for(Compromisso c: compromissos){
+            for(Aviso a: c.getAvisos()){
+                a.cancel();
+            }
+        }
     }
 }
